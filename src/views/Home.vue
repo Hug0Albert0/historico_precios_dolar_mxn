@@ -109,7 +109,7 @@
             valor
          },
       },
-      created() {
+      mounted() {
          this.cargarValorOportuno();
       }
    }
