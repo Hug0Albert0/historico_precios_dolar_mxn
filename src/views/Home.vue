@@ -62,7 +62,7 @@
                         }
                   }
                );
-               this.precioDolar = await datos.data.bmx.series[0].datos[0].dato;
+               this.precioDolar = await parseFloat(datos.data.bmx.series[0].datos[0].dato).toFixed(2).toString();
                this.fechaFormato = fechaDolar.split("-").reverse().join("/");
                this.claseResultado = "teal"
                this.mensajeResultado = `
@@ -90,17 +90,13 @@
                         }
                   }
                );
-               this.oportunoPrecio = await datos.data.bmx.series[0].datos[0].dato;
+               this.oportunoPrecio = await parseFloat(datos.data.bmx.series[0].datos[0].dato).toFixed(2).toString();
                this.oportunoFecha = await datos.data.bmx.series[0].datos[0].fecha;
                this.maximaFecha = await datos.data.bmx.series[0].datos[0].fecha.split("/").reverse().join("-");
                this.fechaDolar = await datos.data.bmx.series[0].datos[0].fecha.split("/").reverse().join("-");
                this.obtenerPreciosDolar(this.fechaDolar);
-
             } catch (error) {
                console.log("No hay valores para éste día");
-            }
-            finally {
-               console.log("Peticion terminada");
             }
          }
       },
