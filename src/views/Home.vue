@@ -26,6 +26,12 @@
       <v-overlay :value="overlay">
          <v-progress-circular indeterminate size="64"></v-progress-circular>
       </v-overlay>
+
+      <v-row>
+         <v-col cols="12">
+            <v-btn color="red" dark x-large block @click="irGraficas">Gráficas</v-btn>
+         </v-col>
+      </v-row>
    </div>
 </template>
 
@@ -49,6 +55,9 @@
          }
       },
       methods: {
+         irGraficas() {
+            this.$router.push('graficas');
+         },
          async obtenerPreciosDolar(fechaDolar) {
             try {
                this.bloquearPeticion = true;
